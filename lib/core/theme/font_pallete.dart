@@ -10,6 +10,13 @@ class FontPalette {
     fontFamily: fontFamily,
   );
 
+  // ---------------- Font Size: 14 ----------------
+  static TextStyle font14Medium = TextStyle(
+    fontSize: 14,
+    fontWeight: FontWeight.w500,
+    fontFamily: fontFamily,
+  );
+
   // ---------------- Font Size: 16 ----------------
 
   static TextStyle font16Medium = TextStyle(

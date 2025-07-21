@@ -8,7 +8,9 @@ class Assets {
   static const String imagesResigsterOrSignUpBg = 'assets/images/resigster_or_sign up_bg.png';
   static const String imagesResigsterOrSignUpBgLight = 'assets/images/resigster_or_sign up_bg_light.png';
   static const String pngBackIcon = 'assets/png/back_icon.png';
+  static const String svgAppleIcon = 'assets/svg/apple_icon.svg';
   static const String svgDarkIcon = 'assets/svg/dark_icon.svg';
+  static const String svgGoogleIcon = 'assets/svg/google_icon.svg';
   static const String svgLightIcon = 'assets/svg/light_icon.svg';
   static const String svgVector = 'assets/svg/Vector.svg';
 }
