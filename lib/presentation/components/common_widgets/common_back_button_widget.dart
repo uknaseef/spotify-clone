@@ -3,7 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:spotify_clone/generated/assets.dart';
 
 class CommonBackButtonWidget extends StatelessWidget {
-  const CommonBackButtonWidget({super.key});
+  final VoidCallback? onTap; 
+  const CommonBackButtonWidget({super.key,this.onTap});
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +18,9 @@ class CommonBackButtonWidget extends StatelessWidget {
                 ? Colors.white.withValues(alpha: 0.1)
                 : Color(0xffffffff).withValues(alpha: 0.4),
         child: InkWell(
-          onTap: () {},
+          onTap: onTap??(){
+            Navigator.pop(context);
+          },
           child: Padding(
             padding: EdgeInsets.symmetric(horizontal: 13, vertical: 10.w),
             child: Center(

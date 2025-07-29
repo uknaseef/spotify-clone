@@ -40,7 +40,7 @@ class _SplashScreenState extends State<SplashScreen> {
       if (!mounted) return;
       Navigator.pushNamedAndRemoveUntil(
         context,
-        RouteConstants.routeGetStarted,
+        RouteConstants.routeBottomScreen,
         (route) => false,
       );
     });

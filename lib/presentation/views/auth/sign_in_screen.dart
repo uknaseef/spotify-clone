@@ -1,24 +1,30 @@
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:spotify_clone/core/theme/font_pallete.dart';
 import 'package:spotify_clone/generated/assets.dart';
 import 'package:spotify_clone/presentation/components/common_widgets/primary_button.dart';
+import 'package:spotify_clone/services/routes/route_constants.dart';
 import '../../components/common_widgets/common_scaffold_widget.dart';
+import '../../components/common_widgets/custom_textfield.dart';
+import 'widgets/support_text_widget.dart';
 
 class SignInScreen extends StatelessWidget {
   const SignInScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+
     return AuthScaffoldWidget(
       body: Column(
         children: [
           60.verticalSpace,
           Text(
             "Sign In",
-            style: FontPalette.font30Bold.copyWith(color: Color(0xff383838)),
+            style: FontPalette.font30Bold.copyWith(
+              color: isDark ? Color(0xffF2F2F2) : Color(0xff383838),
+            ),
           ),
           22.verticalSpace,
           SupportText(),
@@ -39,7 +45,9 @@ class SignInScreen extends StatelessWidget {
             text: "Sign In",
             padding: EdgeInsets.symmetric(vertical: 27),
             borderRadius: 30.r,
-            onTap: () {},
+            onTap: () {
+              Navigator.pushNamed(context, RouteConstants.routeHomeScreen);
+            },
           ),
           30.verticalSpace,
           Row(
@@ -70,8 +78,17 @@ class SignInScreen extends StatelessWidget {
             children: [
               Text("Not A Member?"),
               TextButton(
-                onPressed: () {},
-                child: Text("Register Now", style: FontPalette.font16Medium.copyWith(color: Color(0xff288CE9))),
+                onPressed:
+                    () => Navigator.pushNamed(
+                      context,
+                      RouteConstants.routeSignupScreen,
+                    ),
+                child: Text(
+                  "Register Now",
+                  style: FontPalette.font16Medium.copyWith(
+                    color: Color(0xff288CE9),
+                  ),
+                ),
               ),
             ],
           ),
@@ -81,85 +98,5 @@ class SignInScreen extends StatelessWidget {
   }
 }
 
-class SupportText extends StatelessWidget {
-  const SupportText({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return RichText(
-      text: TextSpan(
-        style: FontPalette.font12Regular.copyWith(color: Colors.black),
-        children: [
-          const TextSpan(text: 'If You Need Any Support '),
-          TextSpan(
-            text: 'Click Here',
-            style: FontPalette.font12Regular.copyWith(color: Color(0xff38B432)),
-            recognizer:
-                TapGestureRecognizer()
-                  ..onTap = () {
-                    // Handle the click action
-                    print('Click Here tapped!');
-                  },
-          ),
-        ],
-      ),
-    );
-  }
-}
 
-class CustomTextField extends StatefulWidget {
-  final String hintText;
-  final bool isPassword;
-  final TextEditingController? controller;
-
-  const CustomTextField({
-    super.key,
-    required this.hintText,
-    this.isPassword = false,
-    this.controller,
-  });
-
-  @override
-  State<CustomTextField> createState() => _CustomTextFieldState();
-}
-
-class _CustomTextFieldState extends State<CustomTextField> {
-  bool _obscureText = true;
-
-  @override
-  Widget build(BuildContext context) {
-    return TextField(
-      controller: widget.controller,
-      obscureText: widget.isPassword ? _obscureText : false,
-      decoration: InputDecoration(
-        hintText: widget.hintText,
-        hintStyle: FontPalette.font16Medium.copyWith(color: Color(0xff8D8D8D)),
-        contentPadding: EdgeInsets.symmetric(horizontal: 27.w, vertical: 29),
-        enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(30.r),
-          borderSide: const BorderSide(color: Colors.grey),
-        ),
-        focusedBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(30),
-          borderSide: const BorderSide(color: Colors.black87),
-        ),
-        suffixIcon:
-            widget.isPassword
-                ? IconButton(
-                  icon: Icon(
-                    _obscureText ? Icons.visibility_off : Icons.visibility,
-                    color: Colors.grey,
-                  ),
-                  onPressed: () {
-                    setState(() {
-                      _obscureText = !_obscureText;
-                    });
-                  },
-                )
-                : null,
-        // filled: true,
-        // fillColor: Colors.transparent,
-      ),
-    );
-  }
-}

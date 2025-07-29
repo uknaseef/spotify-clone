@@ -1,6 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:spotify_clone/presentation/views/auth/sign_in_screen.dart';
 import 'package:spotify_clone/presentation/views/auth/sign_or_log_screen.dart';
+import 'package:spotify_clone/presentation/views/auth/signup_screen.dart';
+import 'package:spotify_clone/presentation/views/home/view/bottom_screen.dart';
+import 'package:spotify_clone/presentation/views/home/view/home_screen.dart';
 import 'package:spotify_clone/presentation/views/onboarding/choose_mode_screen.dart';
 import 'package:spotify_clone/presentation/views/onboarding/get_started_screen.dart';
 import 'package:spotify_clone/services/routes/route_constants.dart';
@@ -17,9 +20,18 @@ class RouteGenerator {
       case RouteConstants.routeChooseMood:
         return _buildRoute(RouteConstants.routeChooseMood, ChooseModeScreen());
       case RouteConstants.routeSignOrLogScreen:
-        return _buildRoute(RouteConstants.routeSignOrLogScreen, SignOrLogScreen());
+        return _buildRoute(
+          RouteConstants.routeSignOrLogScreen,
+          SignOrLogScreen(),
+        );
       case RouteConstants.routeSignInScreen:
         return _buildRoute(RouteConstants.routeSignInScreen, SignInScreen());
+      case RouteConstants.routeSignupScreen:
+        return _buildRoute(RouteConstants.routeSignupScreen, SignupScreen());
+      case RouteConstants.routeHomeScreen:
+        return _buildRoute(RouteConstants.routeHomeScreen, HomeScreen());
+      case RouteConstants.routeBottomScreen:
+        return _buildRoute(RouteConstants.routeBottomScreen, BottomScreen());
       default:
         return _buildRoute(RouteConstants.routeInitial, EmptyScreen());
     }

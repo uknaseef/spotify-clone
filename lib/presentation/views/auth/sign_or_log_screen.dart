@@ -55,7 +55,11 @@ class SignOrLogScreen extends StatelessWidget {
                         color: Colors.white,
                       ),
                       text: "Register",
-                      onTap: () {},
+                      onTap:
+                          () => Navigator.pushNamed(
+                            context,
+                            RouteConstants.routeSignupScreen,
+                          ),
                     ),
                     PrimaryButton(
                       padding: EdgeInsets.symmetric(
@@ -67,12 +71,11 @@ class SignOrLogScreen extends StatelessWidget {
                       textStyle: FontPalette.font19Bold,
                       borderRadius: 30.r,
                       text: "Sign in",
-                      onTap: () {
-                        Navigator.pushNamed(
-                          context,
-                          RouteConstants.routeSignInScreen,
-                        );
-                      },
+                      onTap:
+                          () => Navigator.pushNamed(
+                            context,
+                            RouteConstants.routeSignInScreen,
+                          ),
                     ),
                   ],
                 ),

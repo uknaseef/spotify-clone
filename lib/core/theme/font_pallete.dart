@@ -3,7 +3,14 @@ import 'package:flutter/material.dart';
 class FontPalette {
   static const String fontFamily = "";
 
-    // ---------------- Font Size: 12 ----------------
+  // ---------------- Font Size: 10 ----------------
+  static TextStyle font10Regular = TextStyle(
+    fontSize: 10,
+    fontWeight: FontWeight.w400,
+    fontFamily: fontFamily,
+  );
+
+  // ---------------- Font Size: 12 ----------------
   static TextStyle font12Regular = TextStyle(
     fontSize: 12,
     fontWeight: FontWeight.w400,
@@ -16,7 +23,28 @@ class FontPalette {
     fontWeight: FontWeight.w500,
     fontFamily: fontFamily,
   );
+  static TextStyle font14Regular = TextStyle(
+    fontSize: 14,
+    fontWeight: FontWeight.w400,
+    fontFamily: fontFamily,
+  );
+  static TextStyle font14Small = TextStyle(
+    fontSize: 14,
+    fontWeight: FontWeight.w300,
+    fontFamily: fontFamily,
+  );
+  static TextStyle font14ExtraSmall = TextStyle(
+    fontSize: 14,
+    fontWeight: FontWeight.w200,
+    fontFamily: fontFamily,
+  );
 
+  // ---------------- Font Size: 15 ----------------
+  static TextStyle font15ExtraSmall = TextStyle(
+    fontSize: 15,
+    fontWeight: FontWeight.w200,
+    fontFamily: fontFamily,
+  );
   // ---------------- Font Size: 16 ----------------
 
   static TextStyle font16Medium = TextStyle(
@@ -25,6 +53,11 @@ class FontPalette {
     fontFamily: fontFamily,
   );
 
+  static TextStyle font16Bold = TextStyle(
+    fontSize: 16,
+    fontWeight: FontWeight.bold,
+    fontFamily: fontFamily,
+  );
   // ---------------- Font Size: 17 ----------------
   static TextStyle font17Regular = TextStyle(
     fontSize: 17,
@@ -45,9 +78,16 @@ class FontPalette {
     fontFamily: fontFamily,
   );
 
-   static TextStyle font19Bold = TextStyle(
+  static TextStyle font19Bold = TextStyle(
     fontSize: 19,
     fontWeight: FontWeight.bold,
+    fontFamily: fontFamily,
+  );
+
+  // ---------------- Font Size: 20 ----------------
+  static TextStyle font20Medium = TextStyle(
+    fontSize: 20,
+    fontWeight: FontWeight.w500,
     fontFamily: fontFamily,
   );
 
@@ -72,7 +112,7 @@ class FontPalette {
     fontFamily: fontFamily,
   );
 
-    // ---------------- Font Size: 30 ----------------
+  // ---------------- Font Size: 30 ----------------
   static TextStyle font30Bold = TextStyle(
     fontSize: 30,
     fontWeight: FontWeight.bold,
